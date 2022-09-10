@@ -5,6 +5,7 @@ import {
   getBrandById,
   deleteBrandById,
   updateBrand,
+  deleteAllBrands,
 } from "../controller/brandController.js";
 
 const router = express.Router();
@@ -18,5 +19,7 @@ router.get("/get/:id", getBrandById);
 router.delete("/delete/:id", deleteBrandById);
 
 router.put("/update/:id", updateBrand);
+
+router.delete("/delete", deleteAllBrands);
 
 export default router;

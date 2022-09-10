@@ -64,3 +64,13 @@ export const updateBrand = async (req, res) => {
     console.error(error);
   }
 };
+
+export const deleteAllBrands = async (req, res) => {
+  try {
+    await BrandModel.deleteMany({ brand: req.body.brand });
+    res.status(200).send("All brands have been successfully deleted");
+  } catch (error) {
+    res.status(405).send(error);
+    console.error(error);
+  }
+};
